@@ -43,7 +43,12 @@ function Home() {
                     <MdOutlineAddBox className='text-sky-800 text-4xl' />
                 </Link>
             </div>
-            {loading ? (<Spinner />) : showType === 'table' ? (<BooksTable books={books} />) : (<BookCard books={books} />)}
+            {loading
+                ? (<Spinner />)
+                : showType === 'table'
+                    ? (<BooksTable books={books} />)
+                    : (<BookCard books={books} />)
+            }
         </div>
     );
 }
