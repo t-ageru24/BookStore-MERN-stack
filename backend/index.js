@@ -8,19 +8,19 @@ import cors from 'cors';
 const app = express();
 
 // Middleware for parsing request body
-app.use(express.json());
+// app.use(express.json());
 
 //Middleware for handling CORS POLICY
 //Option 1: allow All Origins with default of cors(*)
 app.use(cors());
 //Option 2: Allow custom Origins
-// app.use(
-//     cors({
-//         origin: 'http://localhost:300',
-//         methods: ['GET', 'POST', 'PUT', 'DELETE',],
-//         allowedHeaders: ['Content-Type'],
-//     })
-// );
+app.use(
+    cors({
+        origin: 'http://localhost:300',
+        methods: ['GET', 'POST', 'PUT', 'DELETE',],
+        allowedHeaders: ['Content-Type'],
+    })
+);
 
 app.get('/', (request, response) => {
     console.log(request)
