@@ -21,14 +21,20 @@ const app = express();
 //         allowedHeaders: ['Content-Type'],
 //     })
 // );
+// app.use(
+//     cors({
+//         origin: 'https://books-store-app-xtdc.onrender.com', // Replace with your frontend's URL
+//         methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+//         allowedHeaders: ['Content-Type'], // Allowed headers
+//     })
+// );
 app.use(
     cors({
-        origin: 'https://books-store-app-xtdc.onrender.com', // Replace with your frontend's URL
-        methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
-        allowedHeaders: ['Content-Type'], // Allowed headers
+        origin: '*', // Allow all origins (or specify your frontend's URL)
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        allowedHeaders: ['Content-Type'],
     })
 );
-
 
 
 app.get('/', (request, response) => {
